@@ -1,0 +1,25 @@
+.mainMenuButton {
+	background-color:#130d41;
+	border-radius:28px;
+	border:1px solid #1c7411;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:18px 100px;
+	text-decoration:none;
+	text-shadow:3px 3px 0px #2f6627;
+    transition: padding 0.3s;
+}
+.mainMenuButton:hover {
+	background-color:#07f543;
+    color: black;
+    text-shadow:0px 0px 0px #2f6627;
+    padding:18px 300px;
+}
+.mainMenuButton:active {
+	position:relative;
+	top:1px;
+}

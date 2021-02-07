@@ -1,0 +1,67 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Chesticuffs RPG - Online</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Menu Bar-->
+    <div class="topnav">
+        <a href="index.html">Chesticuffs RPG</a>
+        <a>|</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="play.html">Play</a>
+        <a href="#news" onclick="PageNotAvaliable()">News</a>
+        <a href="#account" onclick="PageNotAvaliable()">Account</a>
+        <a>|</a>
+        <a href="https://discord.gg/8T9EVjvB6T">Official Discord</a>
+    </div>
+    <!--MenuBar Script-->
+    <script>
+        function PageNotAvaliable() {
+            alert("WIP");
+        }
+    </script>
+
+<!--Game-->
+<script type="text/javascript">
+
+    var config = {
+        type: Phaser.AUTO,
+        width: 1400,
+        height: 700,
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    var game = new Phaser.Game(config);
+
+    function preload ()
+    {
+        this.load.spritesheet('test', '../Sprites/test.jpg', { frameWidth: 800, frameHeight: 800 });
+    }
+
+    function create ()
+    {
+        this.add.image(450, 200, 'test').setOrigin(0, 0);
+    }
+
+    function update ()
+    {
+    }
+
+</script>
+
+</body>
+</html>

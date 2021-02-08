@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8" />
     <title>Chesticuffs RPG - Online</title>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="game.js"></script>
     <link rel="stylesheet" type="text/css" href="../index.css">
     <style type="text/css">
         body {
@@ -11,6 +11,7 @@
         }
     </style>
 </head>
+<script src="../pixi.min.js"></script>
 <body>
 
     <!--Menu Bar-->
@@ -31,36 +32,43 @@
         }
     </script>
 
+    <style>* {padding: 0; margin: 0}</style>
+
 <!--Game-->
 <script type="text/javascript">
+    //Aliases
+    let Application = PIXI.Application,
+        loader = PIXI.loader,
+        resources = PIXI.loader.resources,
+        Sprite = PIXI.Sprite;
 
-    var config = {
-        type: Phaser.AUTO,
-        width: 1400,
-        height: 700,
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
-        }
-    };
-
-    var game = new Phaser.Game(config);
-
-    function preload ()
-    {
-        this.load.spritesheet('test', '../Sprites/test.jpg', { frameWidth: 800, frameHeight: 800 });
+    //Create a Pixi Application
+    let app = new Application({ 
+        width: 256, 
+        height: 256,                       
+        antialias: true, 
+        transparent: false, 
+        resolution: 1
     }
+    );
 
-    function create ()
-    {
-        this.add.image(470, 140, 'test').setOrigin(0, 0);
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    document.body.appendChild(app.view);
+
+    //load an image and run the `setup` function when it's done
+    loader
+      .add("../sprites/test.jpg")
+      .load(setup);
+
+    //This `setup` function will run when the image has loaded
+    function setup() {
+
+      //Create the cat sprite
+      let test = new Sprite(resources["../sprites/test.jpg"].texture);
+  
+      //Add the cat to the stage
+      app.stage.addChild(test);
     }
-
-    function update ()
-    {
-    }
-
 </script>
 
 </body>

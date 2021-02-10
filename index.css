@@ -115,3 +115,17 @@ body {
 	position:relative;
 	top:1px;
 }
+
+.rainbow {
+    animation-name: colours;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colours {
+    0%   {color: rgb(255, 238, 0);}
+    25%  {color: rgb(0, 255, 21);}
+    50%  {color: rgb(0, 204, 255);}
+    75% {color: rgb(255, 0, 221);}
+    100%   {color: rgb(255, 238, 0);}
+}
